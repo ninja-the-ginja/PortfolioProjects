@@ -153,10 +153,3 @@ FROM PercentPopulationVaccinated
 
 
 
-
-
-SELECT continent, MAX(cast(total_deaths as INT)) AS TotalDeathCount
-FROM PortfolioProject1..CovidDeaths
-WHERE continent is not NULL
-GROUP BY continent
-ORDER BY TotalDeathCount DESC
