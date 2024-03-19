@@ -1,0 +1,22 @@
+import os, shutil
+
+path = r"C:/Users/chris/OneDrive/Documents/Powerpoint/"
+
+file_name = os.listdir(path)
+
+folder_names = ['Pictures', 'Video Files', 'Powerpoint Presentations']
+
+for loop in range(0,3):
+    if not os.path.exists(path + folder_names[loop]):
+        print(path + folder_names[loop])
+        os.makedirs(path + folder_names[loop])
+        
+for file in file_name:
+    if ".jpg" in file and not os.path.exists(path + "Pictures/" + file):
+        shutil.move(path + file, path + "Pictures/" + file)
+    elif ".jpeg" in file and not os.path.exists(path + "Pictures/" + file):
+        shutil.move(path + file, path + "Pictures/" + file)
+    elif ".mp4" in file and not os.path.exists(path + "Video Files/" + file):
+        shutil.move(path + file, path + "Video Files/" + file)
+    elif ".pptx" in file and not os.path.exists(path + "Powerpoint Presentations/" + file):
+        shutil.move(path + file, path + "Powerpoint Presentations/" + file)
